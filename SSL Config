@@ -1,0 +1,18 @@
+<VirtualHost *:443>
+    DocumentRoot "C:/xampp/htdocs/"
+    ServerName localhost
+    SSLEngine on
+    SSLCertificateFile "conf/ssl.crt/server.crt" 
+    SSLCertificateKeyFile "conf/ssl.key/server.key"
+    <Directory "C:/xampp/htdocs/">
+        Options All
+        AllowOverride All
+        Require all granted
+    </Directory>
+</VirtualHost>
+
+# Virtual hosts
+Include conf/extra/httpd-vhosts.conf
+
+For Chrome:
+chrome://flags/#allow-insecure-localhost
